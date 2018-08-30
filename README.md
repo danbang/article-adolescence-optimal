@@ -6,6 +6,8 @@ Haller*, Bang*, Bahrami &amp; Lau, Group-decision making is optimal in adolescen
 
 FigureX.m files will generate the specified plots and analyses from the paper.
 
+The "Helpers" folder should be downloaded; it contains a custom script for computing sensitivity.
+
 **The data file contains the following information**
 
 *groupID*: group identifier
