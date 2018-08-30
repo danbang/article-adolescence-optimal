@@ -6,7 +6,7 @@ Haller*, Bang*, Bahrami &amp; Lau, Group-decision making is optimal in adolescen
 
 FigureX.m files will generate the specified plots and analyses from the paper.
 
-**The data files contain the following information**
+**The data file contains the following information**
 
 *groupID*: group identifier
 
