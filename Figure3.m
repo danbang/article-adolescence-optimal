@@ -114,65 +114,66 @@ group_mu = [mean(gdata.sminsmax(cindx)) mean(gdata.sminsmax(aindx))];
 group_se = [std(gdata.sminsmax(cindx))/sqrt(sum((cindx))) std(gdata.sminsmax(aindx))/sqrt(sum((aindx)))];
 bar(group_mu,'FaceColor',[.7 .7 .7],'LineWidth',1); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(i)-group_se(i) group_mu(i)+group_se(i)],'k-','LineWidth',2); end;
-plot(.8+rand(1,sum(cindx))./10,gdata.sminsmax(cindx),'k.');
-plot(2.2+rand(1,sum(aindx))./10,gdata.sminsmax(aindx),'k.');
-plot([0 3],[mean(gdata.sminsmax(gindx)) mean(gdata.sminsmax(gindx))],'r-');
+plot(.8+rand(1,sum(cindx))./10,gdata.sminsmax(cindx),'k.','MarkerSize',12);
+plot(2.2+rand(1,sum(aindx))./10,gdata.sminsmax(aindx),'k.','MarkerSize',12);
+plot([0 3],[mean(gdata.sminsmax(gindx)) mean(gdata.sminsmax(gindx))],'r-','LineWidth',2);
 box('off')
 xlim([0 3]); ylim([0 1]);
 set(gca,'XTick',[1 2],'XTickLabel',{'YA','OA'})
 set(gca,'YTick',[0:.25:1]);
 title('similarity','FontWeight','normal')
 ylabel('slope_m_i_n/slope_m_a_x')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
+% text(-1.15,1.1,'A','clipping','off','FontSize',30,'FontWeight','Bold')
 % COLLECTIVE BENEFIT: SENSITIVITY
 subplot(2,2,2);
 group_mu = [mean(gdata.cbslomax(cindx)) mean(gdata.cbslomax(aindx))];
 group_se = [std(gdata.cbslomax(cindx))/sqrt(sum((cindx))) std(gdata.cbslomax(aindx))/sqrt(sum((aindx)))];
 bar(group_mu,'FaceColor',[.7 .7 .7],'LineWidth',1); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(i)-group_se(i) group_mu(i)+group_se(i)],'k-','LineWidth',2); end;
-plot(.8+rand(1,sum(cindx))./10,gdata.cbslomax(cindx),'k.');
-plot(2.2+rand(1,sum(aindx))./10,gdata.cbslomax(aindx),'k.');
-plot([0 3],[mean(gdata.cbslomax(gindx)) mean(gdata.cbslomax(gindx))],'r-');
+plot(.8+rand(1,sum(cindx))./10,gdata.cbslomax(cindx),'k.','MarkerSize',12);
+plot(2.2+rand(1,sum(aindx))./10,gdata.cbslomax(aindx),'k.','MarkerSize',12);
+plot([0 3],[mean(gdata.cbslomax(gindx)) mean(gdata.cbslomax(gindx))],'r-','LineWidth',2);
 box('off')
 xlim([0 3]); ylim([.6 1.6]);
 set(gca,'XTick',[1 2],'XTickLabel',{'YA','OA'})
 set(gca,'YTick',[.6:.2:1.6]);
 title('collective benefit','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_m_a_x');
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
+% text(-1.05,1.7,'B','clipping','off','FontSize',30,'FontWeight','Bold')
 % OPTIMALITY
 subplot(2,2,3);
 group_mu = [mean(gdata.optimality(cindx)) mean(gdata.optimality(aindx))];
 group_se = [std(gdata.optimality(cindx))/sqrt(sum((cindx))) std(gdata.optimality(aindx))/sqrt(sum((aindx)))];
 bar(group_mu,'FaceColor',[.7 .7 .7],'LineWidth',1); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(i)-group_se(i) group_mu(i)+group_se(i)],'k-','LineWidth',2); end;
-plot(.8+rand(1,sum(cindx))./10,gdata.optimality(cindx),'k.');
-plot(2.2+rand(1,sum(aindx))./10,gdata.optimality(aindx),'k.');
-plot([0 3],[mean(gdata.optimality(gindx)) mean(gdata.optimality(gindx))],'r-');
+plot(.8+rand(1,sum(cindx))./10,gdata.optimality(cindx),'k.','MarkerSize',12);
+plot(2.2+rand(1,sum(aindx))./10,gdata.optimality(aindx),'k.','MarkerSize',12);
+plot([0 3],[mean(gdata.optimality(gindx)) mean(gdata.optimality(gindx))],'r-','LineWidth',2);
 box('off')
 xlim([0 3]); ylim([.7 1.2]);
 set(gca,'XTick',[1 2],'XTickLabel',{'YA','OA'})
 set(gca,'YTick',[.7:.1:1.2]);
 title('optimality','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_W_C_S');
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
+% text(-1.15,1.25,'C','clipping','off','FontSize',30,'FontWeight','Bold');
 % DELIBERATION TIME
 subplot(2,2,4);
 group_mu = [mean(gdata.deliberate(cindx)) mean(gdata.deliberate(aindx))];
 group_se = [std(gdata.deliberate(cindx))/sqrt(sum((cindx))) std(gdata.deliberate(aindx))/sqrt(sum((aindx)))];
 bar(group_mu,'FaceColor',[.7 .7 .7],'LineWidth',1); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(i)-group_se(i) group_mu(i)+group_se(i)],'k-','LineWidth',2); end;
-plot(.8+rand(1,sum(cindx))./10,gdata.deliberate(cindx),'k.');
-plot(2.2+rand(1,sum(aindx))./10,gdata.deliberate(aindx),'k.');
-plot([0 3],[nanmean(gdata.deliberate(gindx)) nanmean(gdata.deliberate(gindx))],'r-');
+plot(.8+rand(1,sum(cindx))./10,gdata.deliberate(cindx),'k.','MarkerSize',12);
+plot(2.2+rand(1,sum(aindx))./10,gdata.deliberate(aindx),'k.','MarkerSize',12);
+plot([0 3],[nanmean(gdata.deliberate(gindx)) nanmean(gdata.deliberate(gindx))],'r-','LineWidth',2);
 box('off')
 xlim([0 3]); ylim([5 25]);
 set(gca,'XTick',[1 2],'XTickLabel',{'YA','OA'})
 set(gca,'YTick',[5:5:25]);
 title('deliberation','FontWeight','normal')
 ylabel('seconds')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
+% text(-1.05,27,'D','clipping','off','FontSize',30,'FontWeight','Bold')
+print('-djpeg','-r300',['matlab-Figure3']);

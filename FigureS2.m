@@ -88,6 +88,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -107,8 +109,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('accuracy','FontWeight','normal')
 ylabel('percent correct')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % SENSITIVITY
 subplot(2,2,2);
 x  = zscore(idata.age(sindx));
@@ -120,6 +121,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -139,8 +142,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('sensitivity','FontWeight','normal')
 ylabel('slope')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % EGOCENTRIC
 subplot(2,2,3);
 x  = zscore(idata.age(sindx));
@@ -152,6 +154,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -171,8 +175,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('egocentric bias','FontWeight','normal')
 ylabel('follow own decision')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % REACTION TIME
 subplot(2,2,4);
 x  = zscore(idata.age(sindx));
@@ -184,6 +187,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -203,5 +208,5 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('reaction time','FontWeight','normal')
 ylabel('seconds')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
+print('-djpeg','-r300',['matlab-FigureS2']);

@@ -121,8 +121,8 @@ figz=figure('color',[1 1 1]);
 subplot(2,2,1);
 group_mu = [mean(gdata.sminsmax(cindx,:)); mean(gdata.sminsmax(aindx,:))];
 group_se = [std(gdata.sminsmax(cindx,:))./sqrt(sum((cindx))); std(gdata.sminsmax(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -133,14 +133,14 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[.50:.10:.80]);
 title('similarity','FontWeight','normal')
 ylabel('slope_m_i_n/slope_m_a_x')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
+
 % COLLECTIVE BENEFIT: SENSITIVITY
 subplot(2,2,2);
 group_mu = [mean(gdata.cbslomax(cindx,:)); mean(gdata.cbslomax(aindx,:))];
 group_se = [std(gdata.cbslomax(cindx,:))./sqrt(sum((cindx))); std(gdata.cbslomax(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -151,14 +151,13 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[.9:.1:1.4]);
 title('collective benefit','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_m_a_x');
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % OPTIMALITY
 subplot(2,2,3);
 group_mu = [mean(gdata.optimality(cindx,:)); mean(gdata.optimality(aindx,:))];
 group_se = [std(gdata.optimality(cindx,:))./sqrt(sum((cindx))); std(gdata.cbslomax(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -169,14 +168,13 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[.85:.05:1.15]);
 title('optimality','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_W_C_S');
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % DELIBERATION TIME
 subplot(2,2,4);
 group_mu = [mean(gdata.deliberate(cindx,:)); mean(gdata.deliberate(aindx,:))];
 group_se = [std(gdata.deliberate(cindx,:))./sqrt(sum((cindx))); std(gdata.deliberate(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -187,5 +185,5 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[8:2:16]);
 title('deliberation','FontWeight','normal')
 ylabel('seconds');
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
+print('-djpeg','-r300',['matlab-Figure5']);

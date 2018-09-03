@@ -121,6 +121,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -140,8 +142,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('similarity','FontWeight','normal')
 ylabel('slope_m_i_n/slope_m_a_x')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
 % COLLECTIVE BENEFIT: SENSITIVITY
 subplot(2,2,2);
 x  = zscore(gdata.age(sindx));
@@ -153,6 +154,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -172,8 +175,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('collective benefit','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_m_a_x');
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
 % OPTIMALITY
 subplot(2,2,3);
 x  = zscore(gdata.age(sindx));
@@ -185,6 +187,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -204,8 +208,7 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('optimality','FontWeight','normal')
 ylabel('slope_d_y_a_d/slope_W_C_S');
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
 % DELIBERATION TIME
 subplot(2,2,4);
 x  = zscore(gdata.age(sindx));
@@ -217,6 +220,8 @@ z2 = polyval(p2,[min(x):.1:max(x)]);
 [beta1,~,stats1]=glmfit([x x.^2],y);
 plot([10 11],[10 11],'r-','LineWidth',2); hold on;
 plot([10 11],[10 11],'b-','LineWidth',2); hold on;
+plot([-10 10],[0 0],'k--'); hold on;
+plot([0 0],[-10 10],'k--'); hold on;
 plot(x,y,'k.','MarkerSize',14); hold on;
 plot([min(x):.1:max(x)],z1,'-','color','r','LineWidth',2); hold on; 
 plot([min(x):.1:max(x)],z2,'-','color','b','LineWidth',2); hold on; 
@@ -236,5 +241,5 @@ set(gca,'YTick',[-3:1.5:+3]);
 title('deliberation','FontWeight','normal')
 ylabel('seconds')
 xlabel('age')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2);
+print('-djpeg','-r300',['matlab-FigureS3']);

@@ -74,11 +74,11 @@ gindx=idata.condition(:,1)==3;
 % PLOT RESULTS
 figz=figure('color',[1 1 1]);
 % ACCURACY
-subplot(2,4,1:2);
+subplot(2,2,1);
 group_mu = [mean(idata.accuracy(cindx,:)); mean(idata.accuracy(aindx,:))];
 group_se = [std(idata.accuracy(cindx,:))./sqrt(sum((cindx))); std(idata.accuracy(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -89,14 +89,13 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[.65:.05:.85]);
 title('accuracy','FontWeight','normal')
 ylabel('percent correct')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % SENSITIVITY
-subplot(2,4,3:4);
+subplot(2,2,2);
 group_mu = [mean(idata.slope(cindx,:)); mean(idata.slope(aindx,:))];
 group_se = [std(idata.slope(cindx,:))./sqrt(sum((cindx))); std(idata.slope(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -107,14 +106,13 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[1:.5:2.5]);
 title('sensitivity','FontWeight','normal')
 ylabel('slope')
-set(gca,'FontSize',14)
-axis square
+set(gca,'FontSize',16,'LineWidth',2) 
 % EGOCENTRIC
-subplot(2,4,6:7);
+subplot(2,2,3);
 group_mu = [mean(idata.egochoice(cindx,:)); mean(idata.egochoice(aindx,:))];
 group_se = [std(idata.egochoice(cindx,:))./sqrt(sum((cindx))); std(idata.egochoice(aindx,:))./sqrt(sum((aindx)))];
-plot([1 2],group_mu(1,:),'k-'); hold on;
-plot([1 2],group_mu(2,:),'k--'); hold on;
+plot([1 2],group_mu(1,:),'k-','LineWidth',2); hold on;
+plot([1 2],group_mu(2,:),'k--','LineWidth',2); hold on;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(1,i)-group_se(1,i) group_mu(1,i)+group_se(1,i)],'k-','LineWidth',1); end;
 i_v=[1 2];    for i=1:length(i_v); plot([i_v(i) i_v(i)],[group_mu(2,i)-group_se(2,i) group_mu(2,i)+group_se(2,i)],'k-','LineWidth',1); end;
 plot([1 2],group_mu(1,:),'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
@@ -125,15 +123,5 @@ set(gca,'XTick',[1 2],'XTickLabel',{'session 1','session 2'})
 set(gca,'YTick',[.4:.05:.6]);
 title('egocentric bias','FontWeight','normal')
 ylabel('follow own decision')
-set(gca,'FontSize',14)
-axis square
-% LEGEND
-subplot(2,4,8);
-plot(10,10,'ko','MarkerFaceColor',[1 1 1],'LineWidth',1); hold on;
-plot(10,10,'ko','MarkerFaceColor',[0 0 0],'LineWidth',1); hold on;
-box off
-axis off
-xlim([1 2]); ylim([1 2]);
-legend('YA','OA','Location','NorthWest');
-legend('boxoff')
-set(gca,'FontSize',20)
+set(gca,'FontSize',16,'LineWidth',2) 
+print('-djpeg','-r300',['matlab-Figure4']);
