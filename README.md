@@ -58,4 +58,4 @@ The "Helpers" folder should be downloaded; it contains a custom script for compu
 
 *disagree*: disagreement (0: no; 1: yes)
 
-This material is being released with a permissive open-source license. If you make use of the data or ode, we would appreciate that you cite the paper.
+This material is being released with a permissive open-source license. If you make use of the data or code, we would appreciate that you cite the paper.
