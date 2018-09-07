@@ -1,6 +1,6 @@
 # article-adolescence-optimal
 
-This repository contains anonymised behavioural data and code supporting the following paper:
+This repository contains deidentified raw data and code supporting the following paper:
 
 Haller*, Bang*, Bahrami &amp; Lau, Group-decision making is optimal in adolescence. Under review.
 
