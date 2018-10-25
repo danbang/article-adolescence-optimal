@@ -2,7 +2,7 @@
 
 This repository contains deidentified raw data and code supporting the following paper:
 
-Haller*, Bang*, Bahrami &amp; Lau, Group-decision making is optimal in adolescence. Under review. [*equal contribution]
+Haller*, Bang*, Bahrami &amp; Lau, Group-decision making is optimal in adolescence. Scientific Report. [*equal contribution]
 
 FigureX.m files will generate the specified plots and analyses from the paper.
 
